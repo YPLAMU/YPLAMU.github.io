@@ -34,7 +34,10 @@
         }
         // Make sure the client is loaded and sign-in is complete before calling this method.
         function execute() {
-            return gapi.client.youtube.playlistItems.list({})
+            return gapi.client.youtube.playlistItems.list({
+                    "part": "snippet",
+                    "playlistId": "PLYt_B7Vuk2K-GEnvI0hR8gpnQ6RIRqmJU"
+                })
                 .then(function(response) {
                         // Handle the results here (response.result has the parsed body).
                         console.log("Response", response);
