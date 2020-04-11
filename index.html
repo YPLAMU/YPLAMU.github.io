@@ -24,7 +24,7 @@
 
         function loadClient() {
             gapi.client.setApiKey(config.api_key);
-            return gapi.client.load('youtube', 'v3')
+            return gapi.client.load('youtube', 'v3', execute)
                 .then(function() {
                         console.log("GAPI client loaded for API");
                     },
@@ -53,5 +53,4 @@
         });
     </script>
     <button onclick="authenticate().then(loadClient)">authorize and load</button>
-    <button onclick="execute()">execute</button>
 </body>
