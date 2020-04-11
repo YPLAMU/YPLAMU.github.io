@@ -49,8 +49,8 @@
                     });
         }
         gapi.load("client:auth2", function() {
-            gapi.auth2.init({
-                client_id: config.client_id
+            gapi.client.init({
+                clientId: config.client_id
             });
         });
     </script>
