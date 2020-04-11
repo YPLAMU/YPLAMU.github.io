@@ -12,10 +12,11 @@
         function authenticate() {
             return gapi.auth2.getAuthInstance()
                 .signIn({
-                    scope: "https://www.googleapis.com/auth/youtube"
+                    scope: "https://www.googleapis.com/auth/youtube.readonly"
                 })
                 .then(function() {
                         console.log("Sign-in successful");
+                        loadClient();
                     },
                     function(err) {
                         console.error("Error signing in", err);
@@ -53,5 +54,5 @@
             });
         });
     </script>
-    <button onclick="authenticate().then(loadClient)">authorize and load</button>
+    <button onclick="authenticate()">authorize and load</button>
 </body>
